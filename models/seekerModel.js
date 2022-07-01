@@ -1,19 +1,16 @@
 const mongoose = require('mongoose');
 
 const seeker = new mongoose.Schema({
-    email:{
+    email: {
         type: String,
         required: true,
         unique: true,
-        max: 255,
-        min: 4
     },
-    password:{
+    password: {
         type: String,
         required: true,
-        max: 1024,
-        min: 6
-    }
+        minlength: 6,
+    },
 }, { collection: 'seeker-data'}
 );
 
